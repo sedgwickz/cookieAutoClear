@@ -1,0 +1,20 @@
+{
+    "name": "paywall Remover111",
+    "version": "1.0",
+    "description": "去除付费墙",
+    "manifest_version": 2,
+    "background": {
+        "page": "background.html"
+    },
+    "permissions": [
+        "webNavigation",
+        "contentSettings",
+        "cookies",
+        "storage",
+        "tabs",
+        "<all_urls>"
+    ],
+    "browser_action": {
+        "default_popup": "popup.html"
+    }
+}
