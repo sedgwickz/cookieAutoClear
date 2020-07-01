@@ -1,19 +1,17 @@
 {
-    "name": "paywall Remover",
-    "version": "1.0",
-    "description": "去除付费墙",
+    "name": "paywallRemover",
+    "version": "0.1",
+    "description": "paywallRemover can help you automatically delete local specific cookies, so as to escape some website paywall like medium.com.",
     "manifest_version": 2,
     "background": {
         "page": "background.html"
     },
     "permissions": [
         "webNavigation",
-        "webRequest",
         "cookies",
         "storage",
         "tabs",
-        "http://*/*",
-        "https://*/*"
+        "*://*/*"
     ],
     "browser_action": {
         "default_popup": "popup.html",
