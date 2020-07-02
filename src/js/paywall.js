@@ -55,10 +55,10 @@ const addDomainToStorage = async (key, domain) => {
   const domainsCache = await getKey(key)
   let newDomains = []
   if (
-    domainsCache.paywallRemoverData &&
-    domainsCache.paywallRemoverData instanceof Array
+    domainsCache.cookieAutoClearData &&
+    domainsCache.cookieAutoClearData instanceof Array
   ) {
-    newDomains = [...new Set([...domainsCache.paywallRemoverData, domain])]
+    newDomains = [...new Set([...domainsCache.cookieAutoClearData, domain])]
   } else {
     newDomains = [...domains]
   }
@@ -69,10 +69,10 @@ const removeDomaiFromStorage = async (key, domain) => {
   const domains = await getKey(key)
   let newDomains = []
   if (
-    domains.paywallRemoverData &&
-    domains.paywallRemoverData instanceof Array
+    domains.cookieAutoClearData &&
+    domains.cookieAutoClearData instanceof Array
   ) {
-    newDomains = domains.paywallRemoverData.filter((d) => d !== domain)
+    newDomains = domains.cookieAutoClearData.filter((d) => d !== domain)
   }
   await setKey({ [key]: newDomains })
 }
@@ -110,7 +110,7 @@ const clearBrowserCookies = (hostname) => {
 }
 
 export const paywall = {
-  key: 'paywallRemoverData',
+  key: 'cookieAutoClearData',
   hostname: '',
   statusButton: null,
   backgoundInit: async function () {
@@ -139,9 +139,9 @@ export const paywall = {
   checkDomainExists: async function () {
     const data = await getKey(this.key)
     return (
-      data.paywallRemoverData &&
-      data.paywallRemoverData instanceof Array &&
-      data.paywallRemoverData.includes(this.hostname)
+      data.cookieAutoClearData &&
+      data.cookieAutoClearData instanceof Array &&
+      data.cookieAutoClearData.includes(this.hostname)
     )
   },
   addDomain: async function () {
@@ -155,8 +155,8 @@ export const paywall = {
   },
   getDomainList: async function () {
     const data = await getKey(this.key)
-    return data.paywallRemoverData && data.paywallRemoverData instanceof Array
-      ? data.paywallRemoverData
+    return data.cookieAutoClearData && data.cookieAutoClearData instanceof Array
+      ? data.cookieAutoClearData
       : []
   },
   clearDomains: async function () {
@@ -166,9 +166,9 @@ export const paywall = {
     const domains = await getKey(this.key)
     if (
       domains &&
-      domains.paywallRemoverData &&
-      domains.paywallRemoverData instanceof Array &&
-      domains.paywallRemoverData.includes(hostname)
+      domains.cookieAutoClearData &&
+      domains.cookieAutoClearData instanceof Array &&
+      domains.cookieAutoClearData.includes(hostname)
     ) {
       clearBrowserCookies(hostname)
     } else {

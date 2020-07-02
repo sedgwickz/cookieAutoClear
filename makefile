@@ -1,6 +1,6 @@
 
 pkg: clean
-	zip -r paywallRemover.zip src/
+	zip -r cookieAutoClear.zip src/
 
 clean: 
-	rm -rf paywallRemover.zip
+	rm -rf *.zip

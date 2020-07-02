@@ -1,7 +1,7 @@
 {
-    "name": "paywallRemover",
+    "name": "Cookie AutoClear",
     "version": "0.1",
-    "description": "paywallRemover can help you automatically delete local specific cookies, so as to escape some website paywall like medium.com.",
+    "description": "Cookie AutoClear can help you automatically delete local specific cookies, so as to escape some website paywall like medium.com.",
     "manifest_version": 2,
     "background": {
         "page": "background.html"

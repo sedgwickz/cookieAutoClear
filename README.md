@@ -1,16 +1,29 @@
-# 简介
+# Intro
+
+[English](/README.md) | [中文](README.zh.md)
+
 ![](/src/images/icon-default48.png)
 
-paywallRemover 是一款 chrome 浏览器插件，它可以帮你浏览一些含有付费墙的网站内容，比如 medium.com，当然您可以添加任意其他网站。除此之外，基于该插件原理，你可以添加任意防跟踪的网站网址，保护个人隐私。如果本项目对你有帮助，请帮忙给个 star⭐️，非常感谢。根据网友使用情况，我会添加一些其他功能性 feature。
+Cookie AutoClear can help you delete specific cookies as you need, which would track your personal privacy or inhibit your casual use, such as the websites which have a paywall like medium.com.
 
-# 原理
+> Node: Cookie AutoClear won't record any your information or data on any server, and all user data just exist on yourself browser.
 
-一般含有付费墙的网站都是通过 cookie 记录客户端行为，本插件自动删除相应网址 cookie 从而达到绕过付费墙和系统对用户的跟踪。
+# Features
 
-下面画一个简图，原理很简单
+- Automatically delete the cookies which website url on the setting page, and you can always edit as you like all the time.
 
-![](/docs/assets/intro.png)
+- Switch it on or off as you need by clicking the switch button on the extension popup menu.
 
-# 协议
+- Never collect any information about yours. For more information you can visit: [Privacy Policy](https://github.com/sedgwickz/cookieAutoClear/blob/master/docs/privacy_policy.md)
+
+# Usage
+
+Just Install it then it works, that's it. The default filter url in your setting dashboard is medium.com, after installing this extension, you can always read articles without any limit. You can always edit it for your requirement. Hope you guys enjoy it.
+
+If you have any other problem, file an issue on GitHub. Maybe we can work it out.
+
+Project url: https://github.com/sedgwickz/cookieAutoClear
+
+# Licensing
 
 Apache License 2.0
